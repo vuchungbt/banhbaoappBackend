@@ -36,7 +36,10 @@ const dbURI = config.get("mongoURI");
 
 //Connect to MongoDb
 mongoose
-  .connect(dbURI)
+  .connect(dbURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(() => console.log("MongoDb is connected..."), {
     useNewUrlParser: true,
     dbName: "banhbaoappQA"
